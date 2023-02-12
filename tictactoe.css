@@ -21,21 +21,27 @@ body{
     text-align: center;
 }
 .title span{
-    color: #f2ebd3;
+    color: white;
 }
 
 .status-reset {
     font-size: 25px;
     margin-top: 25px;
-    display: flex;
-    justify-content: space-around;
+    height: 50px;
+    width: 600px;
+    padding: 0 50px;
 }
 .status {
     border-left: 5px solid gold;
     border-radius: 5px;
     padding: 10px 10px 10px 5px;
+    float: left;
+}
+.status span{
+    color: white;
 }
 .reset {
+    float: right;
     cursor: pointer;
     translate: color, 1.5s ;
     border: 1px solid white;
@@ -78,4 +84,7 @@ body{
 .o::after{
     content: 'O';
     font-size: 130px;
+}
+.won::after{
+    color: red;
 }
