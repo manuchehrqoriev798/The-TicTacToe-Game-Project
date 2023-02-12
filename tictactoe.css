@@ -73,6 +73,11 @@ body{
     cursor: pointer;
 }
 
+
+.x, .o {
+    cursor: default;
+}
+
 /* .game-cell::before {          this puts x in all cells
     content: 'x';
 } */
@@ -87,4 +92,52 @@ body{
 }
 .won::after{
     color: red;
+}
+
+
+
+
+@media only screen and (max-width:1024px){
+    .container{
+        height: 300px;
+        width: 300px;
+    }
+    .game-grid{
+        margin-top: 25px;
+        grid-gap:10px;
+        grid-template-columns: repeat(3, 1fr) ;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    
+    .game-cell{
+        height: 180px;
+        width: 195px;
+    }
+
+    .x::after{
+        font-size: 150px;
+    }
+    .o::after{
+        font-size: 90px;
+    }
+}
+
+
+@media only screen and (max-width:540px){
+    .container{
+        margin: 25px;
+        padding:25px;
+    }
+    
+    .game-cell{
+        height: 100px;
+        width: 100px;
+    }
+
+    .x::after{
+        font-size: 100px;
+    }
+    .o::after{
+        font-size: 60px;
+    }
 }
