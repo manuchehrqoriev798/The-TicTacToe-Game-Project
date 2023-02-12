@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    color: #ffd700;
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color: #000;
+    border-radius: 25px;
+    margin: 50px;
+    padding: 50px;
+}
+.title {
+    text-align: center;
+}
+.title span{
+    color: #f2ebd3;
+}
+
+.status-reset {
+    font-size: 25px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+.status {
+    border-left: 5px solid gold;
+    border-radius: 5px;
+    padding: 10px 10px 10px 5px;
+}
+.reset {
+    cursor: pointer;
+    translate: color, 1.5s ;
+    border: 1px solid white;
+    box-shadow: rgba(245, 241, 241, 0.733) 0px 2px 8px, rgb(206, 204, 204) 0px 5px 6px;
+    border-radius: 5px;
+    padding: 7px;    
+}
+.reset:hover{
+    color: white;
+    background-color: gold;
+    transition: 1s;
+}
+.game-grid {
+    background-color: rgb(218, 209, 209);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-top: 50px;
+
+}
+.game-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    cursor: pointer;
+}
+
+/* .game-cell::before {          this puts x in all cells
+    content: 'x';
+} */
+.x::after{                     /* why just x class because in javascript we add x as third class of game-cell element*/
+    content: '×';
+    color: white;
+    font-size: 200px;
+}
+.o::after{
+    content: 'O';
+    font-size: 130px;
+}
