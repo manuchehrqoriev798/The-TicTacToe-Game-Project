@@ -3,25 +3,25 @@
 
 
 // HTML Elements
-const statusDiv = document.querySelector('.status');
-const resetDiv = document.querySelector('.reset');
-const cellDivs = document.querySelectorAll('.game-cell');
+const statusDiv = document.querySelector('.status');          // ineracting with elements from HTML through DOM      
+const resetDiv = document.querySelector('.reset');            // ineracting with elements from HTML through DOM    
+const cellDivs = document.querySelectorAll('.game-cell');     // ineracting with elements from HTML through DOM         
 
 // game constants
-const xSymbol = '×';
-const oSymbol = '○';
+const xSymbol = '×';             // special signs of constants of the game
+const oSymbol = '○';             // special signs of constants of the game
 
 // game variables
-let gameIsLive = true;
-let xIsNext = true;
+let gameIsLive = true;           // if gameIsLive becomes false game finishes
+let xIsNext = true;              // if xIsNext false it would be turn of o
 
 
 // functions
-const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;
+const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;   // ternar statement: if there is no x print xSymbol; if there is print oSymbol
 
 
 // handleWin(letter).style.color = 'green'
-const handleWin = (letter) => {
+const handleWin = (letter) => {                                          // function that shows text to notify the winner
   gameIsLive = false;
   if (letter === 'x') {
     statusDiv.innerHTML = `${letterToSymbol(letter)} has won!`;
@@ -37,7 +37,7 @@ const handleWin = (letter) => {
 // handleWin.style.color = 'red'
 
 
-const checkGameStatus = () => {
+const checkGameStatus = () => {                                                           // function of listening all winning combination
   const topLeft = cellDivs[0].classList[1];
   const topMiddle = cellDivs[1].classList[1];
   const topRight = cellDivs[2].classList[1];
@@ -48,7 +48,7 @@ const checkGameStatus = () => {
   const bottomMiddle = cellDivs[7].classList[1];
   const bottomRight = cellDivs[8].classList[1];
 
-  // check winner
+  // check winner                                                                        //Logic of  writing places of all winning combination
   if (topLeft && topLeft === topMiddle && topLeft === topRight) {
     handleWin(topLeft);
     cellDivs[0].classList.add('won');
@@ -89,22 +89,22 @@ const checkGameStatus = () => {
     cellDivs[2].classList.add('won');
     cellDivs[4].classList.add('won');
     cellDivs[6].classList.add('won');
-  } else if (topLeft && topMiddle && topRight && middleLeft && middleMiddle && middleRight && bottomLeft && bottomMiddle && bottomRight) {
+  } else if (topLeft && topMiddle && topRight && middleLeft && middleMiddle && middleRight && bottomLeft && bottomMiddle && bottomRight) {  
     gameIsLive = false;
-    statusDiv.innerHTML = 'Game is tied!';
+    statusDiv.innerHTML = 'Game is tied!';                                                                   // if all cells are filled but there is no winning combination, game is draw
   } else {
     xIsNext = !xIsNext;
     if (xIsNext) {
-      statusDiv.innerHTML = `${xSymbol} now is your turn`;
+      statusDiv.innerHTML = `${xSymbol} now is your turn`;                                                   // if x is true type this, but after one true it becomes false
     } else {
-      statusDiv.innerHTML = `<span>${oSymbol} now is you turn </span>`;
+      statusDiv.innerHTML = `<span>${oSymbol} now is you turn </span>`;                                     // if x is false type o
     }
   }
 };
 
 
 // event Handlers
-const handleReset = () => {
+const handleReset = () => {                                             // reset bottom: remove x, 0, won. Bring text of xSymbol is next. Change style of status (text)
   xIsNext = true;
   statusDiv.innerHTML = `${xSymbol} is next`;
   for (const cellDiv of cellDivs) {
@@ -116,14 +116,14 @@ const handleReset = () => {
   statusDiv.style.backgroundColor = 'black'
 };
 
-const handleCellClick = (e) => {
+const handleCellClick = (e) => {                                       // function that adds x or o to as 2nd class of grid-cells.
   const classList = e.target.classList;
 
-  if (!gameIsLive || classList[1] === 'x' || classList[1] === 'o') {
+  if (!gameIsLive || classList[1] === 'x' || classList[1] === 'o') {   // x or o. Not both or multiple
     return;
   }
 
-  if (xIsNext) {
+  if (xIsNext) {                                                       // first adds x then o then x then o. 
     classList.add('x');
     checkGameStatus();
   } else {
@@ -134,8 +134,8 @@ const handleCellClick = (e) => {
 
 
 // event listeners
-resetDiv.addEventListener('click', handleReset);
+resetDiv.addEventListener('click', handleReset);                     // while clicking to resetDiv it declares handleReset function
 
-for (const cellDiv of cellDivs) {
+for (const cellDiv of cellDivs) {                                    // while clickin in grid-cells that are children of grid it declares handleCellClick which adds x or o to element as addition class
   cellDiv.addEventListener('click', handleCellClick)
 }

@@ -1,4 +1,4 @@
-*{
+*{                                                              /* reseting some elements*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,13 +35,13 @@ body{
     border-left: 5px solid gold;
     border-radius: 5px;
     padding: 10px 10px 10px 5px;
-    float: left;
+    float: left;                                                 /* i used float in order to prevent moving another div after changing size fo curent div */
 }
 .status span{
     color: white;
 }
 .reset {
-    float: right;
+    float: right;                                               /* i used float in order to prevent moving another div after changing size fo curent div */
     cursor: pointer;
     translate: color, 1.5s ;
     border: 1px solid white;
@@ -57,9 +57,9 @@ body{
 .game-grid {
     background-color: rgb(218, 209, 209);
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-template-columns: repeat(3, 1fr) ;                    /* equally destrubutes space to 3 */
+    grid-template-rows: repeat(3, 1fr);                        /* equally destrubutes space to 3 */
+    grid-gap: 15px;                                            /* distance between grid elements */
     margin-top: 50px;
 
 }
@@ -75,29 +75,33 @@ body{
 
 
 .x, .o {
-    cursor: default;
+    cursor: default;                                          /* cursor does not react to text*/
 }
 
 /* .game-cell::before {          this puts x in all cells
     content: 'x';
 } */
 .x::after{                     /* why just x class because in javascript we add x as third class of game-cell element*/
-    content: '×';
+    content: '×';              /* changes property of the content after some actions*/      
     color: white;
     font-size: 200px;
 }
 .o::after{
-    content: 'O';
+    content: 'O';              /* changes property of the content after some actions*/         
     font-size: 130px;
 }
 .won::after{
     color: red;
 }
 
+@media only screen  and (max-width:1300px) and (min-width:1200px){                   /* simple way to make it responsive. Not correct way*/
+    .container{
+        scale: 0.65;
+    }
+}
 
 
-
-@media only screen and (max-width:1024px){
+/* @media only screen and (max-width:1024px){
     .container{
         height: 300px;
         width: 300px;
@@ -140,4 +144,4 @@ body{
     .o::after{
         font-size: 60px;
     }
-}
+} */
