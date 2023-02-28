@@ -96,7 +96,7 @@ body{
 
 @media only screen  and (max-width:1300px) and (min-width:1200px){                   /* simple way to make it responsive. Not correct way*/
     .container{
-        scale: 0.65;
+        scale: 0.55;
     }
 }
 

@@ -1,5 +1,5 @@
 // todo: random generator that after putting your name, determines who starts first
-
+// todo: Put timer that when it finishes you lose the game
 
 
 // HTML Elements
