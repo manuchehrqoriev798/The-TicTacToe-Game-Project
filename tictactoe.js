@@ -2,10 +2,29 @@
 // todo: Put timer that when it finishes you lose the game
 
 
+window.addEventListener('load', function(){
+  setTimeout(
+    function () {
+      document.querySelector('.popup-visibility').style.display = 'block'
+    },
+    1500
+  )
+  });
+
+document.querySelector('#close').addEventListener('click', function(){
+  document.querySelector('.popup-visibility').style.display = 'none'
+})
+
+
+
+
+
+
 // HTML Elements
 const statusDiv = document.querySelector('.status');          // ineracting with elements from HTML through DOM      
 const resetDiv = document.querySelector('.reset');            // ineracting with elements from HTML through DOM    
 const cellDivs = document.querySelectorAll('.game-cell');     // ineracting with elements from HTML through DOM         
+
 
 // game constants
 const xSymbol = '×';             // special signs of constants of the game
@@ -136,6 +155,6 @@ const handleCellClick = (e) => {                                       // functi
 // event listeners
 resetDiv.addEventListener('click', handleReset);                     // while clicking to resetDiv it declares handleReset function
 
-for (const cellDiv of cellDivs) {                                    // while clickin in grid-cells that are children of grid it declares handleCellClick which adds x or o to element as addition class
+for (const cellDiv of cellDivs) {                                    // while clicking in grid-cells that are children of grid it declares handleCellClick which adds x or o to element as addition class
   cellDiv.addEventListener('click', handleCellClick)
 }

@@ -1,20 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 *{                                                              /* reseting some elements*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     user-select: none;
 }
+
+.popup-visibility{
+    display: none;
+    width: 50vw;
+    height: 30vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    font-family: "Poppins", sans-serif ;
+}
+.popup{
+    display: grid;
+    grid-gap: 20px;
+    color: rgb(255, 238, 0);
+    background-color: rgb(0, 0, 255);
+    border-radius: 10px;
+    padding: 50px 40px;
+    
+}
+.popup button{
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+.popup ul{
+}
+.popup li{
+}
+.popup a{
+    display: block;
+    width: 100px;
+    padding: 5px 5px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px white;
+    text-align: center;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    position: relative;
+    left: 50%;
+}
+.popup h2{
+    text-align: center;
+    color: white;
+    margin: 10px 0;
+}
+
+
+
 body{
     color: #ffd700;
-    display: flex;
-    font-family: sans-serif;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    z-index: 0;
+    position: relative;
+    /* top: -50%; */
 }
 .container{
     background-color: #000;
     border-radius: 25px;
-    margin: 50px;
     padding: 50px;
 }
 .title {
