@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
-*{                                                              /* reseting some elements*/
+*{                                                              
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +10,6 @@
 .popup-visibility{
     display: none;
     width: 50vw;
-    height: 30vw;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -24,12 +23,13 @@
     color: rgb(255, 238, 0);
     background-color: rgb(0, 0, 255);
     border-radius: 10px;
-    padding: 50px 40px;
+    padding: 20px 40px;
     
 }
 .popup button{
     display: block;
-    margin: 0 0 20px auto;
+    margin: 0 0 0 auto;
+    padding: 10px;
     background-color: transparent;
     font-size: 20px;
     border: none;
@@ -41,33 +41,39 @@
 }
 .popup li{
 }
+.popup h2{
+    text-align: center;
+    color: white;
+    margin: 10px 0;
+}
 .popup a{
     display: block;
+    color: white;
+    font-weight: 700;
+    background-color: gold;
+    border: 1px solid white;
     width: 100px;
-    padding: 5px 5px;
-    border-radius: 4px;
+    padding: 12px 10px;
+    border-radius: 10px;
     box-shadow: 3px 3px 5px white;
     text-align: center;
     text-decoration: none;
     transform: translate(-50%, -50%);
     position: relative;
     left: 50%;
-}
-.popup h2{
-    text-align: center;
-    color: white;
-    margin: 10px 0;
+    margin-top: 30px;
 }
 
 
 
-body{
+
+/* body{
     color: #ffd700;
-    /* display: flex; */
-    /* justify-content: center; */
+    display: flex;
+    justify-content: center;
     z-index: 0;
     position: relative;
-    /* top: -50%; */
+    top: -50%;
 }
 .container{
     background-color: #000;
@@ -92,13 +98,13 @@ body{
     border-left: 5px solid gold;
     border-radius: 5px;
     padding: 10px 10px 10px 5px;
-    float: left;                                                 /* i used float in order to prevent moving another div after changing size fo curent div */
+    float: left;                                           
 }
 .status span{
     color: white;
 }
 .reset {
-    float: right;                                               /* i used float in order to prevent moving another div after changing size fo curent div */
+    float: right;                                         
     cursor: pointer;
     translate: color, 1.5s ;
     border: 1px solid white;
@@ -110,13 +116,20 @@ body{
     color: white;
     background-color: gold;
     transition: 1s;
-}
+} */
+
+
+
+
+
+
+
 .game-grid {
     background-color: rgb(218, 209, 209);
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ;                    /* equally destrubutes space to 3 */
-    grid-template-rows: repeat(3, 1fr);                        /* equally destrubutes space to 3 */
-    grid-gap: 15px;                                            /* distance between grid elements */
+    grid-template-rows: repeat(3, 1fr);                        
+    grid-template-columns: repeat(3, 1fr) ;                    
+    grid-gap: 15px;                                            
     margin-top: 50px;
 
 }
@@ -128,37 +141,55 @@ body{
     height: 200px;
     background-color: black;
     cursor: pointer;
-}
+} 
+
+
+
+
+
+
+
+
 
 
 .x, .o {
-    cursor: default;                                          /* cursor does not react to text*/
+    cursor: default;                                          
 }
 
-/* .game-cell::before {          this puts x in all cells
+.game-cell::before {          
     content: 'x';
-} */
-.x::after{                     /* why just x class because in javascript we add x as third class of game-cell element*/
-    content: '×';              /* changes property of the content after some actions*/      
+} 
+.x::after{                     
+    content: '×';                    
     color: white;
     font-size: 200px;
 }
 .o::after{
-    content: 'O';              /* changes property of the content after some actions*/         
+    content: 'O';                       
     font-size: 130px;
 }
 .won::after{
     color: red;
 }
 
-@media only screen  and (max-width:1300px) and (min-width:1200px){                   /* simple way to make it responsive. Not correct way*/
+
+
+
+
+
+
+
+
+
+
+/* @media only screen  and (max-width:1300px) and (min-width:1200px){                   
     .container{
         scale: 0.55;
     }
 }
 
 
-/* @media only screen and (max-width:1024px){
+@media only screen and (max-width:1024px){
     .container{
         height: 300px;
         width: 300px;
@@ -201,4 +232,4 @@ body{
     .o::after{
         font-size: 60px;
     }
-} */
+}  */

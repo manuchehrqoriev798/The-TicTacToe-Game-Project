@@ -7,7 +7,7 @@ window.addEventListener('load', function(){
     function () {
       document.querySelector('.popup-visibility').style.display = 'block'
     },
-    1500
+    1000
   )
   });
 
