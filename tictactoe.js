@@ -7,14 +7,17 @@ window.addEventListener('load', function(){
     function () {
       document.querySelector('.popup-visibility').style.display = 'block'
     },
-    1000
+    500
   )
   });
 
-document.querySelector('#close').addEventListener('click', function(){
+document.querySelector('#close-button').addEventListener('click', function(){
   document.querySelector('.popup-visibility').style.display = 'none'
 })
-
+document.querySelector('#close-link').addEventListener('click', function(e){
+  e.preventDefault(); // this is for href atribute of a in html. Without it href element would refresh page 
+  document.querySelector('.popup-visibility').style.display = 'none'
+})
 
 
 
