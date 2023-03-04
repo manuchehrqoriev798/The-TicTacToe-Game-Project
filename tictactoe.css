@@ -11,7 +11,7 @@
 /* Styles for description */
 .popup-visibility{
     display: none;
-    width: 50vw;
+    width: 60vw;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -77,13 +77,13 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    width: 50vw;
+    width: 50%;
     background-color: black;
     color: gold;
     /* to center the div*/
     left: -50%;
     transform: translate(50%);
-    margin: 7% 0 0 0 ;
+    margin: 2% 0 0 0 ;
     padding: 35px;
     border-radius: 10px;
     box-shadow: 3px 5px 25px gold;
@@ -98,13 +98,12 @@
     color: white;
 }
 .status-reset {
-    /* bug: here there might be problem regarding changing size of status*/
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;      /* space between in order not to push reset element*/
     padding: 20px 0;
     margin-top: 3%;
     font-size: 20px;
+    width: 80%;                          /* width 80% for limiting the total width. If 100% it would stay on the corners but I want from them to stay closer to center*/
 }
 .status {
     border-left: 4px solid gold;
@@ -126,39 +125,34 @@
 }
 
 
+
+
+
+
+
+
+
+
+
 .game-grid {
-}
-.game-cell {
-}
-
-
-
-
-
-
-
-
-
-
-/* .game-grid {
-    background-color: rgb(218, 209, 209);
+    /* grid is for location 3*3 */
     display: grid;
-    grid-template-rows: repeat(3, 1fr);                        
-    grid-template-columns: repeat(3, 1fr) ;                    
-    grid-gap: 15px;                                            
-    margin-top: 50px;
-
+    grid-template-rows: repeat(3, 1fr);          /* divids width for 3 elements that are equeally destributed*/              
+    grid-template-columns: repeat(3, 1fr);       /* divids hight for 3 elements that are equeally destributed*/
+    grid-gap: 7px; 
+    margin-top: 5%;
+    background-color: rgb(218, 209, 209);
 }
 .game-cell {
-    display: flex;
+    /* flex is for putting signs*/
+    display: flex;                            
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
     background-color: black;
-    cursor: pointer;
-}  */
-
+    width: 100px;
+    height: 100px;
+    cursor: pointer;                                          
+} 
 
 
 
@@ -173,16 +167,16 @@
 }
 
 .game-cell::before {          
-    content: 'x';
+    content: '';
 } 
 .x::after{                     
     content: '×';                    
     color: white;
-    font-size: 200px;
+    font-size: 100px;
 }
 .o::after{
     content: 'O';                       
-    font-size: 130px;
+    font-size: 70px;
 }
 .won::after{
     color: red;
