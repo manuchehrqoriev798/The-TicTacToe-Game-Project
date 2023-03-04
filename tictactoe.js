@@ -5,29 +5,31 @@
 window.addEventListener('load', function(){
   setTimeout(
     function () {
-      document.querySelector('.popup-visibility').style.display = 'block'
+      document.querySelector('.description').style.display = 'block'
     },
     500
   )
   });
 
 document.querySelector('#close-button').addEventListener('click', function(){
-  document.querySelector('.popup-visibility').style.display = 'none'
+  document.querySelector('.description').style.display = 'none'
 })
 document.querySelector('#close-link').addEventListener('click', function(e){
   e.preventDefault(); // this is for href atribute of a in html. Without it href element would refresh page 
-  document.querySelector('.popup-visibility').style.display = 'none'
+  document.querySelector('.description').style.display = 'none'
 })
+
+
 
 
 
 
 
 // HTML Elements
-const statusDiv = document.querySelector('.status');          // ineracting with elements from HTML through DOM      
-const resetDiv = document.querySelector('.reset');            // ineracting with elements from HTML through DOM    
-const cellDivs = document.querySelectorAll('.game-cell');     // ineracting with elements from HTML through DOM         
-
+const statusDiv = document.querySelector('.status');          // interacting with elements from HTML through DOM      
+const resetDiv = document.querySelector('.reset');            // interacting with elements from HTML through DOM    
+const cellDivs = document.querySelectorAll('.game-cell');     // interacting with elements from HTML through DOM         
+const popupTitle = document.querySelector('.popup-title')
 
 // game constants
 const xSymbol = '×';             // special signs of constants of the game
@@ -39,7 +41,7 @@ let xIsNext = true;              // if xIsNext false it would be turn of o
 
 
 // functions
-const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;   // ternar statement: if there is no x print xSymbol; if there is print oSymbol
+const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;   // ternary statement: if there is no x print xSymbol; if there is print oSymbol
 
 
 // handleWin(letter).style.color = 'green'
@@ -47,16 +49,15 @@ const handleWin = (letter) => {                                          // func
   gameIsLive = false;
   if (letter === 'x') {
     statusDiv.innerHTML = `${letterToSymbol(letter)} has won!`;
-    statusDiv.style.backgroundColor = 'red'
+    statusDiv.style.borderLeft = '4px solid rgb(0, 255, 8)';
+    statusDiv.style.backgroundColor = 'black'
+    statusDiv.style.color = 'rgb(0, 255, 8)'
     statusDiv.style.transition = '0.5s'
   } else {
     statusDiv.innerHTML = `<span>${letterToSymbol(letter)} has won!</span>`;
-    statusDiv.style.backgroundColor = 'red'
-    statusDiv.style.transition = '0.5s'
   }
-};
-// statusDiv.style.color = 'green'
-// handleWin.style.color = 'red'
+  }
+
 
 
 const checkGameStatus = () => {                                                           // function of listening all winning combination
@@ -113,13 +114,20 @@ const checkGameStatus = () => {                                                 
     cellDivs[6].classList.add('won');
   } else if (topLeft && topMiddle && topRight && middleLeft && middleMiddle && middleRight && bottomLeft && bottomMiddle && bottomRight) {  
     gameIsLive = false;
-    statusDiv.innerHTML = 'Game is tied!';                                                                   // if all cells are filled but there is no winning combination, game is draw
+    statusDiv.innerHTML = 'Game is tied!';   
+    statusDiv.style.borderLeft = '4px solid rgb(0, 255, 8)';
+    statusDiv.style.backgroundColor = 'black'
+    statusDiv.style.color = 'rgb(0, 255, 8)'
   } else {
     xIsNext = !xIsNext;
     if (xIsNext) {
-      statusDiv.innerHTML = `${xSymbol} now is your turn`;                                                   // if x is true type this, but after one true it becomes false
+      statusDiv.innerHTML = `${xSymbol} now is your turn`;   
+      statusDiv.style.color = 'white'
+      statusDiv.style.borderLeft = '4px solid white';
     } else {
-      statusDiv.innerHTML = `<span>${oSymbol} now is you turn </span>`;                                     // if x is false type o
+      statusDiv.innerHTML = `<span>${oSymbol} now is you turn </span>`; 
+      statusDiv.style.color = 'gold'
+      statusDiv.style.borderLeft = '4px solid gold';
     }
   }
 };
@@ -128,14 +136,15 @@ const checkGameStatus = () => {                                                 
 // event Handlers
 const handleReset = () => {                                             // reset bottom: remove x, 0, won. Bring text of xSymbol is next. Change style of status (text)
   xIsNext = true;
-  statusDiv.innerHTML = `${xSymbol} is next`;
+  statusDiv.innerHTML = `${xSymbol} now is your turn`;   
+  statusDiv.style.color = 'white'
+  statusDiv.style.borderLeft = '4px solid white';
   for (const cellDiv of cellDivs) {
     cellDiv.classList.remove('x');
     cellDiv.classList.remove('o');
     cellDiv.classList.remove('won');
   }
   gameIsLive = true;
-  statusDiv.style.backgroundColor = 'black'
 };
 
 const handleCellClick = (e) => {                                       // function that adds x or o to as 2nd class of grid-cells.
@@ -161,3 +170,19 @@ resetDiv.addEventListener('click', handleReset);                     // while cl
 for (const cellDiv of cellDivs) {                                    // while clicking in grid-cells that are children of grid it declares handleCellClick which adds x or o to element as addition class
   cellDiv.addEventListener('click', handleCellClick)
 }
+
+
+
+// window.addEventListener('load', function(){
+//   setTimeout(
+//     function () {
+//       document.querySelector('.game-over').style.display = 'block'
+//       popupTitle.innerHTML = `Game finished ! ${letterToSymbol(letter)} has won!`;
+//     },
+//     200
+//   )
+//   });
+
+// document.querySelector('.reset').addEventListener('click', function(){
+//   document.querySelector('.game-over').style.display = 'none'
+// })

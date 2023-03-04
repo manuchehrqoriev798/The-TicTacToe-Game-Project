@@ -9,7 +9,7 @@
 
 
 /* Styles for description */
-.popup-visibility{
+.description{
     display: none;
     width: 60vw;
     position: absolute;
@@ -20,7 +20,7 @@
     font-family: "Poppins", sans-serif ;
     box-shadow: 5px 3px 10px gold;
 }
-.popup{
+.popup-description{
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -28,9 +28,8 @@
     background-color: black;
     border-radius: 10px;
     padding: 20px 40px;
-    
 }
-.popup button{
+.popup-description button{
     display: block;
     margin: 0 0 0 auto;
     padding: 10px;
@@ -41,11 +40,11 @@
     color: white;
     cursor: pointer;
 }
-.popup ul{
+.popup-description ul{
 }
-.popup li{
+.popup-description li{
 }
-.popup h2{
+.popup-description h2{
     text-align: center;
     color: yellow;
     margin: 10px 0;
@@ -69,6 +68,42 @@
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
 }
+
+
+
+/* Game over */
+.game-over {
+    display: none;
+    width: 60vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    font-family: "Poppins", sans-serif ;
+    box-shadow: 5px 3px 10px gold;
+}
+.popup-title {
+    text-align: center;
+    color: rgb(0, 255, 8);
+}
+.popup-restart{
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+}
+.popup-game-over {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 20px 40px;
+}
+
+
+
 
 
 
@@ -106,9 +141,11 @@
     width: 80%;                          /* width 80% for limiting the total width. If 100% it would stay on the corners but I want from them to stay closer to center*/
 }
 .status {
-    border-left: 4px solid gold;
     border-radius: 3px;
     padding: 10px 0 10px 5px;
+    background-color: black;
+    border-left: 4px solid white;
+    color: white;
 }
 .reset {
     cursor: pointer;
