@@ -87,10 +87,19 @@
     text-align: center;
     color: rgb(0, 255, 8);
 }
-.popup-restart{
+.popup-reset{
     width: 30%;
     text-align: center;
     margin: 0 auto;
+    border: 1px solid rgb(0, 255, 8);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.popup-reset:hover{
+    background-color: rgb(0, 255, 8);
+    color: white;
+    font-weight: 700;
 }
 .popup-game-over {
     display: flex;
