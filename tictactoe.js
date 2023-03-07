@@ -37,7 +37,8 @@ const xSymbol = '×';
 const oSymbol = '○';          
 
 // game variables
-let gameIsLive = true;           
+let gameIsLive = true;    
+let gameIsTie = false       
 let xIsNext = true;           
 
 
@@ -48,7 +49,15 @@ function handleGameEnd() {
     document.querySelector('.game-over').style.display = 'block'
   }
 }
-
+function handleGameTie (){
+  if (gameIsTie = true){
+    statusDiv.innerHTML = 'Game is tied, equality';   
+    statusDiv.style.borderLeft = '4px solid rgb(0, 255, 8)';
+    statusDiv.style.backgroundColor = 'black'
+    statusDiv.style.color = 'rgb(0, 255, 8)'
+    document.querySelector('.game-over').style.display = 'block'
+  } 
+}
 
 // handleWin(letter).style.color = 'green'
 const handleWin = (letter) => {                                          
@@ -60,10 +69,13 @@ const handleWin = (letter) => {
     statusDiv.style.color = 'rgb(0, 255, 8)'
     statusDiv.style.transition = '0.5s'
   } else {
-    statusDiv.innerHTML = `<span>${letterToSymbol(letter)} has won!</span>`;
+    statusDiv.innerHTML = `${letterToSymbol(letter)} has won!`;
+    statusDiv.style.borderLeft = '4px solid rgb(0, 255, 8)';
+    statusDiv.style.backgroundColor = 'black'
+    statusDiv.style.color = 'rgb(0, 255, 8)'
+    statusDiv.style.transition = '0.5s'
   }
   setTimeout(handleGameEnd, 1000);
-  popupTitle.innerHTML = `Game finished,  ${letterToSymbol(letter)} has won!`;
   }
 
 
@@ -121,11 +133,9 @@ const checkGameStatus = () => {
     cellDivs[4].classList.add('won');
     cellDivs[6].classList.add('won');
   } else if (topLeft && topMiddle && topRight && middleLeft && middleMiddle && middleRight && bottomLeft && bottomMiddle && bottomRight) {  
-    gameIsLive = false;
-    statusDiv.innerHTML = 'Game is tied!';   
-    statusDiv.style.borderLeft = '4px solid rgb(0, 255, 8)';
-    statusDiv.style.backgroundColor = 'black'
-    statusDiv.style.color = 'rgb(0, 255, 8)'
+    gameIsLive = false
+    gameIsTie = true
+    setTimeout(handleGameTie, 700);
   } else {
     xIsNext = !xIsNext;
     if (xIsNext) {
@@ -133,7 +143,7 @@ const checkGameStatus = () => {
       statusDiv.style.color = 'white'
       statusDiv.style.borderLeft = '4px solid white';
     } else {
-      statusDiv.innerHTML = `<span>${oSymbol} now is you turn </span>`; 
+      statusDiv.innerHTML = `${oSymbol} now is you turn `; 
       statusDiv.style.color = 'gold'
       statusDiv.style.borderLeft = '4px solid gold';
     }
