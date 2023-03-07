@@ -13,7 +13,7 @@
     display: none;
     width: 60vw;
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);      /*bug: dont forget to edit this part according to container part on each medeas */
     left: 50%;
     top: 50%;
     z-index: 2;
@@ -61,7 +61,7 @@
     box-shadow: 5px 3px 10px gold;
     text-align: center;
     text-decoration: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);        /*bug: dont forget to edit this part according to container part on each medeas */
     position: relative;
     left: 50%;
     margin-top: 30px;
@@ -120,12 +120,12 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    width: 65%;
+    width: 50%; /*bug: control it so that in phone it should be ok. YOu can put 5050 here and change in other width*/
     background-color: black;
     color: gold;
     /* to center the div*/
     left: -50%;
-    transform: translate(30%);
+    transform: translate(50%);
     margin: 0 0 0 0 ;
     padding: 35px;
     border-radius: 10px;
