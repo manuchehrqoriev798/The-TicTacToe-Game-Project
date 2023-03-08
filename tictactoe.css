@@ -266,6 +266,9 @@
     .o::after{
         font-size: 50px;
     }
+    .game-over {
+        width: 80vw;
+    }
 } 
 
 
@@ -279,6 +282,9 @@
         padding: 35px;
         border-radius: 10px;
         box-shadow: 3px 5px 25px gold;
+    }
+    .game-over {
+        width: 90vw;
     }
 } 
 
@@ -300,17 +306,6 @@
     }
 } 
 
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 450px){
     .container {
         width: 95%; 
@@ -320,6 +315,9 @@
         padding: 35px;
         border-radius: 10px;
         box-shadow: 3px 5px 25px gold;
+    }
+    .game-over {
+        width: 100vw;
     }
 } 
 
