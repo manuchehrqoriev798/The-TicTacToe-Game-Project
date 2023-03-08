@@ -238,6 +238,14 @@
 
 
 @media only screen and (max-width: 950px){
+    .description{
+        display: none;
+        width: 75vw;
+        position: absolute;
+        transform: translate(-50%, -50%);     
+        left: 50%;
+        top: 50%;
+    }
     .container {
         width: 60%; 
         left: -80%;
@@ -286,6 +294,14 @@
     .game-over {
         width: 90vw;
     }
+    .description{
+        display: none;
+        width: 100vw;
+        position: absolute;
+        transform: translate(-50%, -50%);     
+        left: 50%;
+        top: 50%;
+    }
 } 
 
 
@@ -332,116 +348,3 @@
     }
 } 
 
-/* @media only screen and (max-width: 400px){
-    .description{
-        display: none;
-        width: 95vw;
-        position: absolute;
-        transform: translate(-50%, -50%);      
-        left: 50%;
-        top: 50%;
-    }
-}  */
-
-
-
-/* .description{
-    display: none;
-    width: 60vw;
-    position: absolute;
-    transform: translate(-50%, -50%);      
-    left: 50%;
-    top: 50%;
-    z-index: 2;
-    font-family: "Poppins", sans-serif ;
-    box-shadow: 5px 3px 10px gold;
-}
-.popup-description{
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    color: white;
-    background-color: black;
-    border-radius: 10px;
-    padding: 20px 40px;
-}
-.popup-description button{
-    display: block;
-    margin: 0 0 0 auto;
-    padding: 10px;
-    background-color: transparent;
-    font-size: 20px;
-    border: none;
-    outline: none;
-    color: white;
-    cursor: pointer;
-}
-.popup-description ul{
-}
-.popup-description li{
-}
-.popup-description h2{
-    text-align: center;
-    color: yellow;
-    margin: 10px 0;
-}
-#close-link a{
-    display: block;
-    color: black;
-    font-weight: 700;
-    background-color: gold;
-    border: 1px solid white;
-    width: 100px;
-    padding: 12px 10px;
-    border-radius: 10px;
-    box-shadow: 5px 3px 10px gold;
-    text-align: center;
-    text-decoration: none;
-    transform: translate(-50%, -50%);       
-    position: relative;
-    left: 50%;
-    margin-top: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-}
-
-
-
-
-.game-over {
-    display: none;
-    width: 60vw;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    z-index: 2;
-    font-family: "Poppins", sans-serif ;
-    box-shadow: 5px 3px 10px gold;
-}
-.popup-title {
-    text-align: center;
-    color: rgb(0, 255, 8);
-}
-.popup-reset{
-    text-align: center;
-    margin: 0 auto;
-    border: 1px solid rgb(0, 255, 8);
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.popup-reset:hover{
-    background-color: rgb(0, 255, 8);
-    color: white;
-    font-weight: 700;
-}
-.popup-game-over {
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    color: white;
-    background-color: black;
-    border-radius: 10px;
-    padding: 20px 40px;
-} */
