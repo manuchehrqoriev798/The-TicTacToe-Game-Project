@@ -11,7 +11,7 @@
 /* Styles for description */
 .description{
     display: none;
-    width: 60vw;
+    width: 100vw;
     position: absolute;
     transform: translate(-50%, -50%);      /*bug: dont forget to edit this part according to container part on each medeas */
     left: 50%;
